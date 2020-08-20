@@ -1,0 +1,95 @@
+<html>
+
+<style>
+    body {
+        background-color: #666666;
+        color: white;
+    }
+</style>
+
+<body>
+    <label style="position:absolute; left:10px; top:15px">Bear/Bird:</label>
+    <label style="position:absolute; left:10px; top:45px">Termite:</label>
+    <label style="position:absolute; left:10px; top:75px">Crocodile:</label>
+    <label style="position:absolute; left:10px; top:105px">Walrus:</label>
+    <label style="position:absolute; left:10px; top:135px">Pumpkin:</label>
+    <label style="position:absolute; left:10px; top:165px">Bee:</label>
+    
+    <script type="text/javascript">
+        function set_bear_bird(value) {
+            var remote = require('electron').remote;
+            global["ModLoader"]["BKO_CHARACTER_BEARBIRD"] = value;
+        }
+
+        function set_termite(value) {
+            var remote = require('electron').remote;
+            global["ModLoader"]["BKO_CHARACTER_TERMITE"] = value;
+        }
+
+        function set_crocodile(value) {
+            var remote = require('electron').remote;
+            global["ModLoader"]["BKO_CHARACTER_CROCODILE"] = value;
+        }
+
+        function set_walrus(value) {
+            var remote = require('electron').remote;
+            global["ModLoader"]["BKO_CHARACTER_WALRUS"] = value;
+        }
+
+        function set_pumpkin(value) {
+            var remote = require('electron').remote;
+            global["ModLoader"]["BKO_CHARACTER_PUMPKIN"] = value;
+        }
+
+        function set_bee(value) {
+            const { ipcRenderer, remote } = require( "electron" );
+            ipcRenderer.Send("SetBee", value);
+            alert("Value is ");
+        }
+        </script>
+    <select style="position:absolute; left:120px; top:10px; width:200px" name="bearbird" id="bearbird">
+        <option value="BANJO_KAZOOIE">Banjo Kazooie [Bear+Bird]</option>
+        <option value="BOTTLES">Bottles</option>
+        <option value="BLUBBER">Blubber</option>
+        <option value="CHIMPY">Chimpy</option>
+        <option value="CONGA">Conga</option>
+        <option value="GRUNTILDA_SEXY">Gruntilda [Human form]</option>
+        <option value="GRUNTILDA_UGLY">Gruntilda [Witch form]</option>
+        <option value="JINJO_BLUE">Jinjo [Blue]</option>
+        <option value="JINJO_GREEN">Jinjo [Green]</option>
+        <option value="JINJO_ORANGE">Jinjo [Orange]</option>
+        <option value="JINJO_PINK">Jinjo [Pink]</option>
+        <option value="JINJO_YELLOW">Jinjo [Yellow]</option>
+        <option value="KLUNGO">Klungo</option>
+        <option value="Limbo">Limbo</option>
+        <option value="MUMBO">Mumbo Jumbo</option>
+        <option value="NABNUT">Nabnuts</option>
+        <option value="TOOTY">Tooty [Bear form]</option>
+        <option value="TOOTY_UGLY">Tooty [Monster form]</option>
+    </select>
+    <select style="position:absolute; left:120px; top:40px; width:200px" name="termite" id="termite"">
+            <option value="BANJO_TERMITE">Banjo Kazooie [Termite]</option>
+            <option value="TERMITE">Termite</option>
+            <option value="CRAB_GREEN">Crab [Green]</option>
+    </select>
+    <select style="position:absolute; left:120px; top:70px; width:200px" name="crocodile" id="crocodile">
+        <option value="BANJO_CROCODILE">Banjo Kazooie [Crocodile]</option>
+        <option value="MR_VILE">Mr. Vile</option>
+    </select>
+    <select style="position:absolute; left:120px; top:100px; width:200px" name="walrus" id="walrus">
+        <option value="BANJO_WALRUS">Banjo Kazooie [Walrus]</option>
+        <option value="WOZZA">Wozza</option>
+    </select>
+    <select style="position:absolute; left:120px; top:130px; width:200px" name="pumpkin" id="pumpkin">
+        <option value="BANJO_PUMPKIN">Banjo Kazooie [Pumpkin]</option>
+        <option value="SNOWBALL">Snowball</option>
+    </select>
+    <select style="position:absolute; left:120px; top:160px; width:200px" name="bee" id="bee">
+        <option value="BANJO_BEE">Banjo Kazooie [Bee]</option>
+        <option value="ZUBBA">Zubba</option>
+    </select>
+</body>
+
+<script> require('./Character.js'); </script>
+
+</html>
