@@ -30,6 +30,13 @@ export class BkCharacter implements IPlugin {
         this.ModLoader.config.setData('BkCharacter', 'pumpkin', 'BANJO_PUMPKIN');
         this.ModLoader.config.setData('BkCharacter', 'bee', 'BANJO_BEE');
         this.ModLoader.config.save();
+
+        this.core.character.bear_bird_id = (<any>API.CharacterType)[config.bear_bird];
+        this.core.character.termite_id = (<any>API.CharacterType)[config.termite];
+        this.core.character.crocodile_id = (<any>API.CharacterType)[config.crocodile];
+        this.core.character.walrus_id = (<any>API.CharacterType)[config.walrus];
+        this.core.character.pumpkin_id = (<any>API.CharacterType)[config.pumpkin];
+        this.core.character.bee_id = (<any>API.CharacterType)[config.bee];
     }
 
     postinit(): void { this.ModLoader.gui.openWindow(330, 190, __dirname + '/Character.html'); }
